@@ -3,8 +3,8 @@
 Aplicatie pentru o sectie medicala a unui spital.
 Softul permite gestionarea angajatilor (asistent, medic, infirmier, brancardier, ingrijitor):
   - adaugarea unui angajat
-  - eliminarea unui angajat
-  - trasarea de sarcini de catre asistentul sef/ medicul sef restului de angajati
+  - stergerea unui angajat
+  - trasarea de sarcini de catre asistentul sef/ medicului sef restului de angajati
 <br>
  Suplimentar: 
  - generarea unui grafic de lucru pentru fiecare grupa de angajati (medici, asistenti, personal medical de ingrijire)
