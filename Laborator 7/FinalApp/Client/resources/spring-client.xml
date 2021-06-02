@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean id="scheduleMakerServicesServer" class="org.springframework.remoting.rmi.RmiProxyFactoryBean">
+        <!--<property name="serviceUrl" value="rmi://192.168.86.11:1099/Chat"/>-->
+        <property name="serviceUrl" value="rmi://localhost:1099/ScheduleMaker"/>
+        <property name="serviceInterface" value="scheduleMaker.services.IScheduleMakerServices"/>
+    </bean>
+
+
+
+</beans>

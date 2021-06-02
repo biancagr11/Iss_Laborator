@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="scheduleMaker.model.User"
+           table="users">
+        <id name="username" column="username">
+        </id>
+        <property name="password" column="password">
+        </property>
+        <property
+                name="permission"
+                column="permission"/>
+        <property
+                name="employee"
+                column="employee"/>
+    </class>
+</hibernate-mapping>

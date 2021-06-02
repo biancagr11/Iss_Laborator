@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="scheduleMaker.model.Task"
+           table="tasks">
+        <id name="id" column="id">
+            <generator class="increment"/>
+        </id>
+        <property
+                name="message"
+                column="message"/>
+        <property
+                name="status"
+                column="status"/>
+        <property name="employee" column="employee"/>
+    </class>
+</hibernate-mapping>

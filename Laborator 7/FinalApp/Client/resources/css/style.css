@@ -1,0 +1,17 @@
+.table-view .column-header,
+.table-view .column-header-background.filler{
+    -fx-background-color:  #36a897;
+}
+.button {
+    -fx-text-fill: white;
+    -fx-font-family: "Dublin";
+    -fx-background-color:  #36a897;
+}
+.combo-box {
+    -fx-border-color: #bcc4c2;
+    -fx-background-color:white;
+}
+.table-view .column-header.foo .label {
+    -fx-text-fill: white;
+    -fx-font-family: "Dublin";
+}

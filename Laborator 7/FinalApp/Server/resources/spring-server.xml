@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <util:properties id="jdbcProps" location="classpath:bd.config"/>
+
+    <bean id="employeeRepo" class="scheduleMaker.persistance.repository.database.EmployeeDatabaseRepository">
+        <constructor-arg ref="jdbcProps"/>
+    </bean>
+<!--    <bean id="userRepo" class="scheduleMaker.persistance.repository.database.UserDatabaseRepository">-->
+<!--        <constructor-arg ref="jdbcProps"/>-->
+<!--    </bean>-->
+
+<!--    <bean id="employeeRepo" class="scheduleMaker.persistance.repository.hibernate.EmployeeORMRepository">-->
+<!--    </bean>-->
+    <bean id="userRepo" class="scheduleMaker.persistance.repository.hibernate.UserORMRepository"></bean>
+
+    <bean id="taskRepo" class="scheduleMaker.persistance.repository.hibernate.TaskORMRepository"></bean>
+
+
+
+    <bean id="scheduleMakerServicesServer" class="scheduleMaker.server.ScheduleMakerServicesImpl">
+        <constructor-arg ref="employeeRepo"/>
+        <constructor-arg ref="userRepo"/>
+        <constructor-arg ref="taskRepo"/>
+
+    </bean>
+
+    <bean class="org.springframework.remoting.rmi.RmiServiceExporter">
+
+        <property name="serviceName" value="ScheduleMaker"/>
+        <property name="service" ref="scheduleMakerServicesServer"/>
+        <property name="serviceInterface" value="scheduleMaker.services.IScheduleMakerServices"/>
+        <property name="servicePort" value="1099"/>
+    </bean>
+
+
+
+</beans>
